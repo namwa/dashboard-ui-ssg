@@ -1,10 +1,10 @@
 {
   "name": "dashboard-ui-ssg",
-  "version": "1.0.0",
+  "version": "1.0.0 ",
   "main": "index.js",
   "scripts": {
-    "watch": "npx tailwindcss -i ./src/static/css/input.css -o ./src/static/css/output.css --watch",
-    "build": "npx tailwindcss -i ./src/static/css/input.css -o ./src/static/css/output.css --minify"
+    "watch": "npx tailwindcss -i ./src/css/input.css -o ./src/static/css/output.css --watch",
+    "build": "npx tailwindcss -i ./src/css/input.css -o ./src/static/css/output.css --minify"
   },
   "author": "",
   "license": "ISC",

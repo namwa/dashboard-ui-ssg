@@ -1,14 +1,6 @@
 {
   "sourceDir": "src",
   "pages": {
-    "index.html": {
-      "sources": [
-        "layout.html",
-        "partials/desktop-nav.html",
-        "partials/mobile-nav.html"
-      ],
-      "url": "/"
-    },
     "signin.html": {
       "sources": [
         "auth/signin.html"
