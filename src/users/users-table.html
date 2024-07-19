@@ -1,0 +1,78 @@
+{{- define "content" }}
+<h2 class="mt-8 px-4 text-lg leading-6 font-medium text-gray-900 sm:px-6 lg:px-8">
+  Users
+</h2>
+
+<!-- Users table -->
+<div class="flex flex-col container mx-auto sm:px-6 mt-8">
+  <div class="overflow-auto sm:-mx-6">
+    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+      <div class="border-b border-gray-200 sm:rounded-lg">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th scope="col" class="user__table--header">
+                Name
+              </th>
+              <th scope="col" class="user__table--header">
+                Email
+              </th>
+              <th scope="col" class="user__table--header">
+                Role
+              </th>
+              <th scope="col" class="user__table--header">
+                Created
+              </th>
+              <th scope="col" class="user__table--header">
+                User UID
+              </th>
+              <th scope="col" class="relative px-6 py-3">
+                <span class="sr-only">Edit</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            {{/* {{ range .Data.Users }} */}}
+            <tr>
+              <td class="user__table--name">
+                <div class="flex items-center">
+                  <div class="flex-shrink-0 h-10 w-10">
+                    <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixqx=wFYA3gA40T&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" d>
+                  </div>
+                  <div class="ml-4">
+                    <div class="text-sm font-medium text-gray-900">
+                      {{/* {{ .Name }} */}}
+                    </div>
+                  </div>
+                  <span class="ml-4 px-2 inline-flex text-xs leading-5 font-semibold bg-green-500 text-green-100">
+                    New
+                  </span>
+                </div>
+              </td>
+              <td class="user__table--role">
+                {{/* {{ .Email }} */}}
+              </td>
+              <td class="user__table--role">
+                {{/* {{ .Role }} */}}
+              </td>
+              <td class="user__table--role">
+                {{/* {{ .Created }} */}}
+              </td>
+              <td class="user__table--role">
+                {{/* {{ .UID }} */}}
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                <a href="/user-details" class="text-blue-600 hover:text-blue-900">View</a>
+              </td>
+            </tr>
+            {{/* {{ end }} */}}
+          </tbody>
+        </table>
+
+        {{- template "pagination.html" . -}}
+
+      </div>
+    </div>
+  </div>
+</div>
+{{- end }}

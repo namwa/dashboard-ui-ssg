@@ -1,0 +1,66 @@
+{{- define "desktop-nav" }}
+<div class="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-64">
+  <div class="flex min-h-0 flex-1 flex-col">
+    <div class="flex h-16 flex-shrink-0 items-center bg-gray-900 px-4">
+      <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+    </div>
+    <div class="flex flex-1 flex-col overflow-y-auto bg-gray-800">
+      <nav class="flex-1 px-2 py-4">
+        <div x-data="{ path: window.location.pathname }" class="space-y-1">
+          <a
+            href="/users"
+            class="group flex items-center rounded-md px-2 py-2 text-sm font-medium" aria-current="page"
+            :class="path === '/users' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' "
+          >
+            <svg
+              class="mr-3 h-6 w-6 flex-shrink-0"
+              :class="path === '/users' ? 'text-gray-300' : 'text-gray-400 group-hover:text-gray-300' " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+            Users
+          </a>
+          <a
+            href="/jobs"
+            class="group flex items-center rounded-md px-2 py-2 text-sm font-medium"
+            :class="path === '/jobs' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' "
+          >
+            <svg
+              class="mr-3 h-6 w-6 flex-shrink-0"
+              :class="path === '/jobs' ? 'text-gray-300' : 'text-gray-400 group-hover:text-gray-300' " fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="{2}" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            Jobs
+          </a>
+          <a
+            href="/alpine"
+            class="group flex items-center rounded-md px-2 py-2 text-sm font-medium"
+            :class="path === '/alpine' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' "
+          >
+            <svg
+              class="mr-3 h-6 w-6 flex-shrink-0"
+              :class="path === '/alpine' ? 'text-gray-300' : 'text-gray-400 group-hover:text-gray-300' "
+              fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+            </svg>
+            Components
+          </a>
+          <a
+            href="/gh-flow"
+            class="group flex items-center rounded-md px-2 py-2 text-sm font-medium"
+            :class="path === '/gh-flow' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' "
+          >
+            <svg
+              class="mr-3 h-6 w-6 flex-shrink-0"
+              :class="path === '/gh-flow' ? 'text-gray-300' : 'text-gray-400 group-hover:text-gray-300' "
+              fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+            </svg>
+            Connect to Github
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+{{- end }}
