@@ -38,16 +38,16 @@
     "components.html": {
       "sources": [
         "layout.html",
-        "alpineComponents/components.html",
+        "alpine/components.html",
         "partials/desktop-nav.html",
         "partials/mobile-nav.html",
-        "alpineComponents/select-menus.html",
-        "alpineComponents/toggle.html",
-        "alpineComponents/dropdown.html",
-        "alpineComponents/modal.html",
-        "alpineComponents/tabs.html",
-        "alpineComponents/accordian.html",
-        "alpineComponents/notification.html"
+        "alpine/select-menus.html",
+        "alpine/toggle.html",
+        "alpine/dropdown.html",
+        "alpine/modal.html",
+        "alpine/tabs.html",
+        "alpine/accordian.html",
+        "alpine/notification.html"
       ],
       "url": "/components"
     },
