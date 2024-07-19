@@ -1,6 +1,12 @@
 {
   "sourceDir": "src",
   "pages": {
+    "index.html": {
+      "sources": [
+        "index.html"
+      ],
+      "url": "/"
+    },
     "signin.html": {
       "sources": [
         "auth/signin.html"
