@@ -1,0 +1,62 @@
+{{- define "content" }}
+<div class="px-8 py-4">
+  <!-- tabs -->
+  <div
+    x-data="{
+      tabs: [
+        {id: 1, title: '1. Connect to Git Provider'},
+        {id: 2, title: '2. Select repository'},
+        {id: 3, title: '3. Configure site'},
+      ],
+      activeTab: 1
+    }"
+  >
+    {{/* mobile tabs */}}
+    <div class="sm:hidden">
+      <label for="tabs" class="sr-only">Select a tab</label>
+      <select
+        x-model="activeTab"
+        name="tabs"
+        class="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+      >
+        <template x-for="(item, index) in tabs">
+          <option :value="item.id" x-text="item.title"></option>
+        </template>
+      </select>
+    </div>
+
+    {{/* desktop tabs */}}
+    <div class="border-b border-gray-200 hidden sm:block">
+      <nav class="-mb-px flex space-x-8 " aria-label="Tabs">
+        <template x-for="(item, index) in tabs">
+          <a
+            href="#"
+            @click="activeTab = item.id"
+            x-text="item.title"
+            :class="activeTab === item.id ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'"
+            class="flex-1 whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium"
+          >
+          </a>
+        </template>
+      </nav>
+    </div>
+
+    {{/* Content corresponds to each tabs */}}
+    <div class="grid grid-cols-1 lg:grid-cols-3">
+
+      <div class="col-span-2">
+        <div x-show="activeTab == 1" class="mt-3 md:mt-0 px-3 py-6">
+          {{ template "step-one" . }}
+        </div>
+        <div x-show="activeTab == 2" class="mt-3 md:mt-0 px-3 py-6">
+          {{ template "step-two" . }}
+        </div>
+      </div>
+
+      <div class="hidden lg:block my-10">
+        {{ template "skeleton-loading-card" .}}
+      </div>
+    </div>
+  </div>
+</div>
+{{- end }}

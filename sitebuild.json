@@ -50,6 +50,18 @@
         "alpineComponents/notification.html"
       ],
       "url": "/components"
+    },
+    "authflow.html": {
+      "sources": [
+        "layout.html",
+        "partials/desktop-nav.html",
+        "partials/mobile-nav.html",
+        "partials/skeleton-loading-card.html",
+        "authflow/tabs.html",
+        "authflow/step-one.html",
+        "authflow/step-two.html"
+      ],
+      "url": "/authflow"
     }
   }
 }
