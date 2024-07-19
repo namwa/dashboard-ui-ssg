@@ -34,6 +34,22 @@
         "partials/pagination.html"
       ],
       "url": "/jobs"
+    },
+    "components.html": {
+      "sources": [
+        "layout.html",
+        "alpineComponents/components.html",
+        "partials/desktop-nav.html",
+        "partials/mobile-nav.html",
+        "alpineComponents/select-menus.html",
+        "alpineComponents/toggle.html",
+        "alpineComponents/dropdown.html",
+        "alpineComponents/modal.html",
+        "alpineComponents/tabs.html",
+        "alpineComponents/accordian.html",
+        "alpineComponents/notification.html"
+      ],
+      "url": "/components"
     }
   }
 }

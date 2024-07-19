@@ -1,0 +1,191 @@
+{{ define "select-menus" -}}
+<div class="px-4 py-4">
+  <h1 class="text-2xl font-semibold my-3 px-4">Dropdowns</h1>
+
+  <!-- Simple custom -->
+  <div class="my-8 px-4">
+    <h2 class="text-base mb-4">Simple custom</h2>
+    <div class="flex justify-center bg-gray-100 border border-gray-200 p-8 rounded-md min-h-[360px]">
+      <div class="w-full mx-auto max-w-sm">
+        <!-- Component start -->
+        <div
+          x-data="{ open: true, items:[{id: 1, name: 'Wade Cooper'}, {id:2, name: 'Arlene Mccoy'}, {id: 3, name: 'Tom Cook'}] }"
+          @click.away="open = false"
+          @keydown.escape="open = false"
+        >
+          <label
+            @click="$refs.button.focus()"
+            id="listbox-label"
+            class="block text-sm font-medium leading-6 text-gray-900"
+          >
+            Assigned to
+          </label>
+
+          <div class="relative mt-2">
+            <button
+              x-ref="button"
+              @click="open = !open"
+              id="selectBtn"
+              type="button"
+              class="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              aria-haspopup="listbox"
+              aria-expanded="true"
+              aria-labelledby="listbox-label"
+            >
+              <span class="block truncate" >test</span>
+              <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            </button>
+
+            <!--
+              Select popover, show/hide based on select state.
+
+              Entering: ""
+                From: ""
+                To: ""
+              Leaving: "transition ease-in duration-100"
+                From: "opacity-100"
+                To: "opacity-0"
+            -->
+            <ul
+              x-show="open"
+              @click.away="open = false"
+              id="menus"
+              class="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm" tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3"
+            >
+              <!--
+                Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation.
+
+                Highlighted: "bg-indigo-600 text-white", Not Highlighted: "text-gray-900"
+              -->
+              <template x-for="item in items">
+                <li class="text-gray-900 relative cursor-default select-none py-2 pl-3 pr-9" id="listbox-option-0" role="option">
+                  <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
+                  <span x-text="item.name" class="font-normal block truncate"></span>
+
+                  <!--
+                    Checkmark, only display for selected option.
+
+                    Highlighted: "text-white", Not Highlighted: "text-indigo-600"
+                  -->
+                  <span class="text-indigo-600 absolute inset-y-0 right-0 flex items-center pr-4">
+                    <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                </li>
+              </template>
+              <!-- More items... -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Multi Select with tags-->
+  <div class="my-8 px-4">
+    <h2 class="text-base mb-4">Multi Select with tags</h2>
+    <div class="flex justify-center bg-gray-100 border border-gray-200 p-8 rounded-md min-h-[400px]">
+      <div class="w-full mx-auto max-w-sm">
+        <!-- Component start -->
+        <div class="relative"
+          x-data="multiselect({
+            items: [
+              { label: 'Magenta', value: '#ff00ff' },
+              { label: 'Blue', value:  '#0000FF' },
+              { label: 'Green', value: '#00FF00' },
+              { label: 'Red', value: '#FF0000' },
+              { label: 'Yellow', value: '#FFFF00' },
+              { label: 'Gray', value: '#CCC' },
+              { label: 'I am a very long value and will show a maximum of 50 chars!', value: '#FF0F0E' },
+            ],
+            size: 3
+          })"
+          x-init="onInit"
+          @focusout="handleBlur"
+        >
+          <!-- Start item tags -->
+          <div class="bg-white rounded-md">
+            <ul class="flex flex-wrap items-center w-full">
+              <!-- Tags (selected) -->
+              <template x-for="(item, idx) in selectedItems">
+                <li
+                  @click="removeElementByIdx(idx)"
+                  @keyup.delete="removeElementByIdx(idx)"
+                  @keyup.backspace="removeElementByIdx(idx)"
+                  tabindex="0"
+                  x-text="shortendLabel(item.label, maxTagChars)"
+                  class="relative m-1 px-2 py-1.5 border rounded-md cursor-pointer hover:bg-gray-100
+                  after:content-['x'] after:ml-1.5 after:text-red-500 outline-none focus:outline-none
+                  ring-0 focus:ring-2 focus:ring-indigo-600 ring-inset transition-all">
+                </li>
+              </template>
+            </ul>
+          </div>
+
+          <div class="relative my-4">
+          <!-- Search input -->
+            <input
+              x-model="search"
+              x-ref="searchInput"
+              @keyup.enter="addActiveItem"
+              @click="expanded = true"
+              @focus="expanded = true"
+              @input="expanded = true"
+              @keyup.arrow-down="expanded = true; selectNextItem()"
+              @keyup.arrow-up="expanded = true; selectPrevItem()"
+              @keyup.escape="reset"
+              :placeholder="searchPlaceholder"
+              type="text"
+              class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+
+            <!-- Arrow Icon -->
+            <svg
+              @click="expanded = !expanded"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              stroke-width="0"
+              fill="#ccc"
+              class="absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer"
+            >
+              <path
+                d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z"
+              />
+            </svg>
+          </div>
+          <!-- Start item list -->
+          <template x-if="expanded">
+            <ul
+              class="w-full list-none border-2 border-t-0 rounded-md focus:outline-none overflow-y-auto outline-none bg-white absolute left-0 -mt-3"
+              tabindex="0"
+              :style="listBoxStyle"
+              x-ref="listBox"
+            >
+              <template x-if="filteredItems.length">
+                <template x-for="(item, idx) in filteredItems">
+                  <!-- Item element -->
+                  <li
+                    @click="handleItemClick(item)"
+                    x-text="shortendLabel(item.label, maxTagChars)"
+                    :class="idx === activeIndex && 'bg-indigo-600 text-white'"
+                    class="hover:bg-indigo-600 hover:text-white  cursor-pointer px-2 py-2 z-10">
+                  </li>
+                </template>
+              </template>
+              <!-- Empty text -->
+              <template x-if="!filteredItems.length">
+                <li x-text="emptyText" class="cursor-pointer px-2 py-2 text-gray-400"></li>
+              </template>
+            </ul>
+          </template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{- end }}
