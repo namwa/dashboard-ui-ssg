@@ -1,6 +1,6 @@
 {
   "name": "dashboard-ui-ssg",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "watch": "npx tailwindcss -i ./src/static/css/input.css -o ./src/static/css/output.css --watch",
