@@ -9,10 +9,6 @@
     "rewrites":
     [
       {
-        "source": "/authflow",
-        "destination": "/authflow.html"
-      },
-      {
         "source": "/",
         "destination": "/index.html"
       },
@@ -22,7 +18,7 @@
       },
       {
         "source": "/users",
-        "destination": "/users-table.html"
+        "destination": "/users.html"
       },
       {
         "source": "/jobs",
@@ -31,6 +27,10 @@
       {
         "source": "/components",
         "destination": "/components.html"
+      },
+      {
+        "source": "/authflow",
+        "destination": "/authflow.html"
       }
     ]
   }

@@ -13,13 +13,13 @@
       ],
       "url": "/signin"
     },
-    "users-table.html": {
+    "users.html": {
       "sources": [
         "layout.html",
         "partials/desktop-nav.html",
         "partials/mobile-nav.html",
         "partials/pagination.html",
-        "users/users-table.html"
+        "users/users.html"
       ],
       "url": "/users"
     },
