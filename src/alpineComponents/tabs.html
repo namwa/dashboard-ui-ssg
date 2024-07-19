@@ -1,0 +1,84 @@
+{{ define "tabs" -}}
+<div class="px-4 py-4">
+  <h1 class="text-2xl font-semibold my-3 px-4">Tabs</h1>
+
+  <!-- Tabs in pills -->
+  <div class="my-8 px-4">
+    <h2 class="text-base mb-4">Tabs in pills</h2>
+     <div class="border border-gray-200 p-8 rounded-md">
+      <div
+        x-data="{
+          tabs: ['My Account', 'Company', 'Team Members', 'Billing'],
+          activeTab: 'My Account'
+        }"
+      >
+        {{/* Mobile screen */}}
+        <div class="sm:hidden">
+          <label for="tabs" class="sr-only">Select a tab</label>
+          <select
+            x-model="activeTab"
+            id="tabs" name="tabs"
+            class="block w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+          >
+            <template x-for="tab in tabs">
+              <option  x-text="tab"></option>
+            </template>
+          </select>
+        </div>
+        {{/* Desktop */}}
+        <div class="hidden sm:block">
+          <nav class="flex" aria-label="Tabs">
+            <template x-for="tab in tabs">
+              <a
+                href="#"
+                @click="activeTab = tab"
+                x-text="tab"
+                :class="activeTab === tab ? 'bg-gray-100 text-gray-700' : 'text-gray-500 hover:text-gray-700'"
+                class="rounded-t-md px-3 py-2 text-sm font-medium"
+              >
+              </a>
+            </template>
+          </nav>
+        </div>
+        {{/* Content corresponds to each tabs */}}
+        <div
+          x-show="activeTab === 'My Account'"
+          class="mt-3 md:mt-0 px-3 py-6 bg-gray-100"
+        >
+          <h2 class="text-lg pb-4">My Account</h2>
+          <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa eum
+            illo, odit nulla amet, deserunt numquam, nihil officiis consequuntur qui adipisci. Dolore
+            aspernatur fugit velit odit facere ullam eligendi tempore.</p>
+        </div>
+        <div
+          x-show="activeTab === 'Company'"
+          class="mt-3 md:mt-0 px-3 py-6 bg-gray-100"
+        >
+          <h2 class="text-lg pb-4">Company</h2>
+          <p class="text-gray-600">Cupiditate corporis vero beatae, eligendi maxime asperiores,
+            voluptates reprehenderit ratione sit totam repellat nihil dolore eius laboriosam quia
+            illo aliquid, nostrum enim!</p>
+        </div>
+        <div
+          x-show="activeTab === 'Team Members'"
+          class="mt-3 md:mt-0 px-3 py-6 bg-gray-100"
+        >
+          <h2 class="text-lg pb-4">Team Members</h2>
+          <p class="text-gray-600">Pellentesque et mollis dolor, vitae pulvinar dolor. Sed porttitor
+            laoreet imperdiet. Phasellus in rhoncus lacus, quis semper odio. Curabitur a porttitor
+            velit. Aenean auctor dictum ex et ullamcorper.</p>
+        </div>
+        <div
+          x-show="activeTab === 'Billing'"
+          class="md:w-1/2 mt-3 md:mt-0 px-3 py-6 bg-gray-100"
+        >
+          <h2 class="text-lg pb-4">Billing</h2>
+          <p class="text-gray-600">In est ex, porta at egestas pharetra, tincidunt quis ex. Proin
+            efficitur, nunc in placerat egestas, odio nisi condimentum dolor, at venenatis sem diam
+            id ex.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{- end }}

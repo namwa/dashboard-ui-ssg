@@ -1,0 +1,38 @@
+{{- define "notification" }}
+<div
+  x-data="{
+    visible: true,
+    timeout: 5000,
+    percent: 0,
+    init() {
+      setTimeout(() => {
+        this.visible = false
+      }, this.timeout)
+
+      const startDate = Date.now()
+      const futureDate = Date.now() + this.timeout
+
+      const interval = setInterval(() => {
+        const date = Date.now()
+        this.percent = (date - startDate) * 100 / (futureDate - startDate)
+
+        if (this.percent >= 100) {
+          clearInterval(interval)
+        }
+
+      }, 30)
+    },
+  }"
+  x-show="visible"
+  class="bg-green-600"
+>
+  <div>Notification message</div>
+  <button @click="visible = false">x</button>
+  <!-- Progress -->
+  <div>
+    <div class="h-5 bg-black/10 rounded"
+     :style="{'width': `${percent}%`}"
+    ></div>
+  </div>
+</div>
+{{- end }}
