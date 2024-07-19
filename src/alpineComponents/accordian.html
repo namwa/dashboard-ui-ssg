@@ -1,62 +1,65 @@
 {{ define "accordian" -}}
 <div class="px-4 py-4">
   <h1 class="text-2xl font-semibold my-3 px-4">Accordion</h1>
+
   <div class="my-8 px-4">
     <h2 class="text-base mb-4">Simple</h2>
-    <div
-      class="my-10 max-w-2xl mx-auto space-y-4 lg:space-y-6"
-      x-data="{
-        faq: [
-          {
-            question: 'Etiam ornare pretium orci, sit amet iaculis eros interdum eget.',
-            answer: [
-              'Cras sit amet lacus id mi vulputate tempor. Praesent tincidunt, tortor ullamcorper volutpat rhoncus, est justo sollicitudin velit, sit amet hendrerit dui mi a eros.','Vestibulum ut tortor et neque congue cursus ac et dui. Praesent hendrerit efficitur mollis.',
-            ]
-          },
-          {
-            question: 'Orci varius natoque penatibus et magnis dis parturient montes.',
-            answer: [
-              'Sed et purus at felis suscipit iaculis vitae sit amet erat.',
-              'In eu aliquet neque, sed euismod nisl. Nulla elementum, nunc sit amet semper maximus, mi ante vehicula lorem, vitae sagittis lorem turpis eu est'
-            ]
-          },
-          {
-            question: 'Ut nec tortor dolor. Suspendisse ex tellus, laoreet id venenatis eu',
-            answer: [
-              'consectetur in quam. Aenean vel augue ex. In nec tincidunt eros. Phasellus in lectus a purus euismod euismod vel suscipit enim'
-            ]
-          }
-        ],
-        faq_selected: null }"
-      >
-      <template x-for="(item, index) in faq" :key="`${index}-${item}`">
-        <div class="item bg-white shadow-md rounded-md p-3">
-          <div
-            class="flex items-center cursor-pointer"
-            @click="faq_selected !== index ? faq_selected = index : faq_selected = null"
-          >
-            {{/* <div class="bg-indigo-100 text-indigo-400 w-8 h-8 md:w-10 md:h-10 rounded-md flex items-center justify-center font-bold text-lg font-display">
-              <span x-text="index + 1"></span>
-            </div> */}}
-            <div class="ml-3 md:ml-4 lg:ml-6 md:text-lg text-indigo-600">
-              <span x-text="item.question"></span>
+     <div class="flex justify-center bg-gray-100 border border-gray-200 p-8 rounded-md min-h-[360px]">
+      <div
+        class="my-10 max-w-2xl mx-auto space-y-4 lg:space-y-6"
+        x-data="{
+          faq: [
+            {
+              question: 'Etiam ornare pretium orci, sit amet iaculis eros interdum eget.',
+              answer: [
+                'Cras sit amet lacus id mi vulputate tempor. Praesent tincidunt, tortor ullamcorper volutpat rhoncus, est justo sollicitudin velit, sit amet hendrerit dui mi a eros.','Vestibulum ut tortor et neque congue cursus ac et dui. Praesent hendrerit efficitur mollis.',
+              ]
+            },
+            {
+              question: 'Orci varius natoque penatibus et magnis dis parturient montes.',
+              answer: [
+                'Sed et purus at felis suscipit iaculis vitae sit amet erat.',
+                'In eu aliquet neque, sed euismod nisl. Nulla elementum, nunc sit amet semper maximus, mi ante vehicula lorem, vitae sagittis lorem turpis eu est'
+              ]
+            },
+            {
+              question: 'Ut nec tortor dolor. Suspendisse ex tellus, laoreet id venenatis eu',
+              answer: [
+                'consectetur in quam. Aenean vel augue ex. In nec tincidunt eros. Phasellus in lectus a purus euismod euismod vel suscipit enim'
+              ]
+            }
+          ],
+          faq_selected: null }"
+        >
+        <template x-for="(item, index) in faq" :key="`${index}-${item}`">
+          <div class="item bg-white shadow-md rounded-md p-3">
+            <div
+              class="flex items-center cursor-pointer"
+              @click="faq_selected !== index ? faq_selected = index : faq_selected = null"
+            >
+              {{/* <div class="bg-indigo-100 text-indigo-400 w-8 h-8 md:w-10 md:h-10 rounded-md flex items-center justify-center font-bold text-lg font-display">
+                <span x-text="index + 1"></span>
+              </div> */}}
+              <div class="ml-3 md:ml-4 lg:ml-6 md:text-lg text-indigo-600">
+                <span x-text="item.question"></span>
+              </div>
+            </div>
+
+            {{/* :style="faq_selected === index ? `max-height:  ${ $el.scrollHeight }px` : ``" */}}
+            <div
+              class="relative overflow-hidden transition-all max-h-0 duration-700"
+
+              :style="faq_selected === index ? `max-height: 200px` : `` "
+            >
+              <div class="text-gray-700 ml-8 md:ml-10 pl-3 md:pl-4 lg:pl-6 py-2 space-y-3">
+                <template x-for="(ans, index) in item.answer" :key="`item-ans-${index}`">
+                  <p x-text="ans"></p>
+                </template>
+              </div>
             </div>
           </div>
-
-          {{/* :style="faq_selected === index ? `max-height:  ${ $el.scrollHeight }px` : ``" */}}
-          <div
-            class="relative overflow-hidden transition-all max-h-0 duration-700"
-
-            :style="faq_selected === index ? `max-height: 200px` : `` "
-          >
-            <div class="text-gray-700 ml-8 md:ml-10 pl-3 md:pl-4 lg:pl-6 py-2 space-y-3">
-              <template x-for="(ans, index) in item.answer" :key="`item-ans-${index}`">
-                <p x-text="ans"></p>
-              </template>
-            </div>
-          </div>
-        </div>
-      </template>
+        </template>
+      </div>
     </div>
   </div>
 </div>
