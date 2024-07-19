@@ -5,6 +5,33 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites":
+    [
+      {
+        "source": "/authflow",
+        "destination": "/authflow.html"
+      },
+      {
+        "source": "/",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/signin",
+        "destination": "/signin.html"
+      },
+      {
+        "source": "/users",
+        "destination": "/users-table.html"
+      },
+      {
+        "source": "/jobs",
+        "destination": "/jobs.html"
+      },
+      {
+        "source": "/components",
+        "destination": "/components.html"
+      }
     ]
   }
 }
