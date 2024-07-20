@@ -14,6 +14,7 @@
       "url": "/signin"
     },
     "users.html": {
+      "dataSources": [ "Users.json" ],
       "sources": [
         "layout.html",
         "partials/desktop-nav.html",
@@ -24,6 +25,7 @@
       "url": "/users"
     },
     "jobs.html": {
+      "dataSources": [ "Jobs.json" ],
       "sources": [
         "layout.html",
         "jobs/jobs.html",

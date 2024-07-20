@@ -28,27 +28,27 @@
             </tr>
           </thead>
           <tbody class="bg-white divide-y divide-gray-200">
-            {{/* {{ range .Data.Jobs }} */}}
+            {{ range .Data.Jobs }}
             <tr>
               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                {{/* {{ .Title }} */}}
+                {{ .Title }}
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-               {{/* {{ .Location }} */}}
+                {{ .Location }}
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                {{/* {{ .CompanyName }} */}}
+                {{ .CompanyName }}
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                 <span class="ml-4 px-2 inline-flex text-xs leading-5 font-semibold bg-green-500 text-green-100">
-                  {{/* {{ .Status }} */}}
+                  {{ .Status }}
                 </span>
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                {{/* {{ .Created }} */}}
+                {{ .Created }}
               </td>
             </tr>
-            {{/* {{ end }} */}}
+            {{ end }}
           </tbody>
         </table>
         {{- template "pagination.html" . -}}

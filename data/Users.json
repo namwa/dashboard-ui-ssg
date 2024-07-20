@@ -1,0 +1,23 @@
+[
+  {
+    "Name":    "Jane Cooper",
+    "Email":   "jane.cooper@example.com",
+    "Role":    "Admin",
+    "Created": "11 Feb 21",
+    "UID":     "abc123344444"
+  },
+  {
+    "Name":    "Cody Fisher",
+    "Email":   "cody.fisher@example.com",
+    "Role":    "Owner",
+    "Created": "8 April 21",
+    "UID":     "abc123344444"
+  },
+  {
+    "Name":    "Jenny Wilson",
+    "Email":   "jenny.wilson@example.com",
+    "Role":    "Member",
+    "Created": "10 May 21",
+    "UID":     "abc123344444"
+  }
+]

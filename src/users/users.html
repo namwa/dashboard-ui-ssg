@@ -32,7 +32,7 @@
             </tr>
           </thead>
           <tbody class="bg-white divide-y divide-gray-200">
-            {{/* {{ range .Data.Users }} */}}
+            {{ range .Data.Users }}
             <tr>
               <td class="user__table--name">
                 <div class="flex items-center">
@@ -41,7 +41,7 @@
                   </div>
                   <div class="ml-4">
                     <div class="text-sm font-medium text-gray-900">
-                      {{/* {{ .Name }} */}}
+                      {{ .Name }}
                     </div>
                   </div>
                   <span class="ml-4 px-2 inline-flex text-xs leading-5 font-semibold bg-green-500 text-green-100">
@@ -50,22 +50,22 @@
                 </div>
               </td>
               <td class="user__table--role">
-                {{/* {{ .Email }} */}}
+                {{ .Email }}
               </td>
               <td class="user__table--role">
-                {{/* {{ .Role }} */}}
+                {{ .Role }}
               </td>
               <td class="user__table--role">
-                {{/* {{ .Created }} */}}
+                {{ .Created }}
               </td>
               <td class="user__table--role">
-                {{/* {{ .UID }} */}}
+                {{ .UID }}
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                 <a href="/user-details" class="text-blue-600 hover:text-blue-900">View</a>
               </td>
             </tr>
-            {{/* {{ end }} */}}
+            {{- end }}
           </tbody>
         </table>
 
