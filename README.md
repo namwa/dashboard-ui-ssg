@@ -2,6 +2,8 @@ This dashboard is built using a hand built Static Site Generator (SSG), Tailwind
 
 It has no npm install or node modules dependencies as it's used Tailwind CLI to compile the styles.
 
+[Demo site](https://misty-slopes.web.app/)
+
 ## Installation
 - SSG tool
 - Tailwind CLI
