@@ -62,6 +62,15 @@
         "authflow/step-two.html"
       ],
       "url": "/authflow"
+    },
+    "projects.html": {
+      "dataSources": [ "Projects.json" ],
+      "sources": [
+        "projects/selection-view.html",
+        "partials/desktop-nav.html",
+        "partials/selection-card.html"
+      ],
+      "url": "/projects"
     }
   }
 }
