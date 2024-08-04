@@ -68,7 +68,8 @@
       "sources": [
         "projects/selection-view.html",
         "partials/desktop-nav.html",
-        "partials/selection-card.html"
+        "partials/selection-card.html",
+        "partials/project-add-card.html"
       ],
       "url": "/projects"
     }
