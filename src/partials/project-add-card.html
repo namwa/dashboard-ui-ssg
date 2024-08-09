@@ -1,12 +1,36 @@
 {{- define "project-add-card" }}
-<li class="h-56 bg-gray-900/65 text-blue-400 rounded-lg shadow-md">
-  <a href="#" class="flex flex-col justify-center items-center h-full w-full px-8 py-10">
-    {{/* Add icon */}}
-    <svg class="h-10 w-10 stroke-2" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+<div x-data="{open: false}">
+  <!-- Add project card -->
+  <div
+    @click="open = true"
+    class="flex flex-col justify-center items-center border-2 border-gray-800 px-8 py-10 h-56 text-gray-800 rounded-lg cursor-pointer hover:shadow-[4px_8px_0_rgba(0,0,0,0.9)]"
+  >
+    <!-- Add icon -->
+    <svg class="h-12 w-12 stroke-2" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
     </svg>
+    <span class="mt-4 font-semibold text-2xl">Create a Project</span>
+  </div>
 
-    <span class="font-semibold text-2xl">Create a Project</span>
-  </a>
-</li>
+  <!-- Slide side panel -->
+  <template x-teleport="body">
+    <div
+      x-show="open"
+      class="fixed flex justify-center items-center inset-0 z-10 bg-gray-400/50"
+    >
+      <div
+        x-transition
+        @click.outside="open = false"
+        x-show="open"
+        class="px-4 md:px-0"
+      >
+        <div class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all">
+
+         test
+
+        </div>
+      </div>
+    </div>
+  </template>
+</div>
 {{- end }}
