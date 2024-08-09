@@ -1,5 +1,5 @@
 {{- define "project-add-card" }}
-<div x-data="{open: false}">
+<div x-cloak x-data="{open: false}">
   <!-- Add project card -->
   <div
     @click="open = true"
@@ -11,26 +11,44 @@
     </svg>
     <span class="mt-4 font-semibold text-2xl">Create a Project</span>
   </div>
-
   <!-- Slide side panel -->
-  <template x-teleport="body">
+  <div class="relative z-10">
     <div
       x-show="open"
-      class="fixed flex justify-center items-center inset-0 z-10 bg-gray-400/50"
+      class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full"
+      x-transition:enter="transform transition ease-in-out duration-500 sm:duration-700"
+      x-transition:enter-start="translate-x-full"
+      x-transition:enter-end="translate-x-0"
+      x-transition:leave="transform transition ease-in-out duration-500 sm:duration-700"
+      x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="translate-x-full"
     >
-      <div
-        x-transition
-        @click.outside="open = false"
-        x-show="open"
-        class="px-4 md:px-0"
-      >
-        <div class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all">
-
-         test
-
+      <div class="pointer-events-auto w-screen">
+        <div class="h-full bg-indigo-100 py-20">
+          <div class="px-6 sm:px-20">
+            <div class="flex items-center justify-between">
+              <h2 class="text-xl md:text-3xl text-gray-900">Create a project</h2>
+              <div class="ml-3 flex h-7 items-center">
+                <button
+                  @click="open = false"
+                  type="button" class="relative rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                  <span class="absolute -inset-2.5"></span>
+                  <span class="sr-only">Close panel</span>
+                  <svg class="h-8 w-8 md:h-10 md:w-10" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 sm:px-20 py-10">
+            <!-- content -->
+            {{ template "create-project-form" . }}
+          </div>
         </div>
       </div>
     </div>
-  </template>
+  </div>
 </div>
 {{- end }}

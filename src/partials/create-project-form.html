@@ -1,0 +1,19 @@
+{{- define "create-project-form" }}
+<div class="max-w-2xl">
+  <h2 class="mt-10 text-2xl sm:text-5xl font-semibold">Let's start with a name for your project </h2>
+  <form class="mt-10">
+    <label for="projectName" class="text-xl block font-medium leading-6 text-gray-900">
+      Project name
+    </label>
+    <input
+      type="text"
+      name="projectName"
+      class="mt-4 block w-full py-4 border-2 border-gray-900 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+      placeholder="Enter your project name"
+    >
+    <button class="border-2 border-gray-800 bg-indigo-700 text-white px-2 py-4">
+      Create
+    </button>
+  </form>
+</div>
+{{- end }}
