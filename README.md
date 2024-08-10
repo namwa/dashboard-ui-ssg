@@ -12,6 +12,8 @@ It has no npm install or node modules dependencies as it's used Tailwind CLI to 
 
 -  ```./build.sh``` to minify css
 
+- ```sitebuild build``` to build the site
+
 - ```sitebuild genroutes``` to generate routes to be used in Firebase Hosting. Copy the output and paste the routes in `firebase.json`, which is an array of `rewrites`.
 
 - Deploy for hosting
