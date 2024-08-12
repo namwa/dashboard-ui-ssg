@@ -73,6 +73,13 @@
         "partials/create-project-form.html"
       ],
       "url": "/projects"
+    },
+    "news.html": {
+      "sources": [
+        "news/layout.html",
+        "news/header.html"
+      ],
+      "url": "/news"
     }
   }
 }
