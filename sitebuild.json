@@ -75,9 +75,14 @@
       "url": "/projects"
     },
     "news.html": {
+      "dataSources": [ "SecondaryNews.json" ],
       "sources": [
         "news/layout.html",
-        "news/header.html"
+        "news/header.html",
+        "news/highlight-section.html",
+        "news/primary-news-card.html",
+        "news/secondary-news-card.html",
+        "news/featured-news-card.html"
       ],
       "url": "/news"
     }
