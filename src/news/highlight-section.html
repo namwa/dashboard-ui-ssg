@@ -1,0 +1,22 @@
+{{- define "highlight-section" }}
+<section class="h-3/6 container mx-auto py-6 px-4">
+  <div class="grid grid-cols-2 lg:grid-cols-4  xl:grid-cols-5 gap-6">
+    <!-- Featured Article -->
+    <div class="col-span-2 row-span-4">
+      {{ template "primary-news-card" index .Data.PrimaryNews 0 }}
+    </div>
+
+    {{- range $.Data.PrimaryNews }}
+    <article class="grid grid-rows-subgrid row-span-2">
+      {{ template "primary-news-card" . }}
+    </article>
+    {{- end }}
+
+    {{- range $.Data.SecondaryNews }}
+    <article class="col-span-2 grid grid-cols-subgrid lg:col-span-1 lg:grid-rows-subgrid lg:row-span-2 border-t border-gray-400">
+      {{ template "secondary-news-card" . }}
+    </article>
+    {{- end }}
+  </div>
+</section>
+{{- end }}

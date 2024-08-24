@@ -1,0 +1,56 @@
+[
+  {
+    "Id": 1,
+    "Category": "Business",
+    "Image": "/images/google.jpg",
+    "Title": "Google says it is deactivating Russia-based AdSense accounts",
+    "Author": "Alex Riders",
+    "Date": "12 Aug 2024",
+    "Last_updated": "5h"
+  },
+  {
+    "Id": 2,
+    "Category": "Tech",
+    "Image": "/images/xplatform.jpg",
+    "Title": "Elon Musk’s X feed becomes megaphone for his right wing politics",
+    "Author": "Tim Bales",
+    "Date": "12 Aug 2024",
+    "Last_updated": "4h"
+  },
+  {
+    "Id": 3,
+    "Category": "Arica",
+    "Image": "/images/diamond.jpg",
+    "Title": "World's second-largest diamond found in Botswana",
+    "Author": "Farouk Chothia",
+    "Date": "21 Aug 2024",
+    "Last_updated": "2h"
+  },
+  {
+    "Id": 4,
+    "Category": "Edinburgh",
+    "Image": "/images/edinburgh.jpg",
+    "Title": "Edinburgh backs introduction of new 'tourist tax'",
+    "Author": "James Delaney",
+    "Date": "21 Aug 2024",
+    "Last_updated": "1h"
+  },
+  {
+    "Id": 5,
+    "Category": "Health",
+    "Image": "/images/microphone.jpg",
+    "Title": "Doctors cast doubt on ham-sandwich diabetes warnings",
+    "Author": "Hannah Boland",
+    "Date": "21 Aug 2024",
+    "Last_updated": "3h"
+  },
+  {
+    "Id": 6,
+    "Category": "Weather",
+    "Image": "/images/storm.jpg",
+    "Title": "Storm Lilian: 80mph winds forecast for parts of the UK",
+    "Author": "Simon King",
+    "Date": "22 Aug 2024",
+    "Last_updated": "3h"
+  }
+]

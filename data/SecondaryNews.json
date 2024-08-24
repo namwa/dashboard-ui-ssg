@@ -1,0 +1,47 @@
+[
+  {
+    "Id": 1,
+    "Category": "Business",
+    "Image": "/images/google.jpg",
+    "Title": "2 Google says it is deactivating Russia-based AdSense accounts",
+    "Author": "Alex Riders",
+    "Date": "12 Aug 2024",
+    "Last_updated": "5h"
+  },
+  {
+    "Id": 2,
+    "Category": "Tech",
+    "Image": "/images/xplatform.jpg",
+    "Title": "2 Elon Musk’s X feed becomes megaphone for his right wing politics",
+    "Author": "Tim Bales",
+    "Date": "12 Aug 2024",
+    "Last_updated": "4h"
+  },
+  {
+    "Id": 3,
+    "Category": "Tech",
+    "Image": "/images/universal-music.jpg",
+    "Title": "Universal Music, Meta expand music licensing agreement",
+    "Author": "Justin Tates",
+    "Date": "21 Aug 2024",
+    "Last_updated": "2h"
+  },
+  {
+    "Id": 4,
+    "Category": "Business",
+    "Image": "/images/meta.jpg",
+    "Title": "Competition watchdog accepts Meta ad data rule changes",
+    "Author": "Basil Lae",
+    "Date": "21 Aug 2024",
+    "Last_updated": "1h"
+  },
+  {
+    "Id": 5,
+    "Category": "Health",
+    "Image": "/images/sandwich.jpg",
+    "Title": "Doctors cast doubt on ham-sandwich diabetes warnings",
+    "Author": "Hannah Boland",
+    "Date": "21 Aug 2024",
+    "Last_updated": "3h"
+  }
+]

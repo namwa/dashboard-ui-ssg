@@ -1,0 +1,13 @@
+{{- define "primary-news-card" }}
+<a href="#" class="mb-4 block ">
+  <img src="{{ .Image }}" alt="" class="h-2/3 lg:h-1/2 w-full object-cover">
+  <h2 class="mt-4 text-black md:text-xl font-semibold font-subheading hover:underline hover:text-red-700">
+    {{ .Title }}
+  </h2>
+</a>
+<div class="self-end">
+  <a href="#"><span class="text-red-700 hover:underline">{{ .Category }}</span></a>
+  <span class="text-sm">&#x2022;</span>
+  <span class="text-gray-600">{{ .Last_updated }}</span>
+</div>
+{{- end }}
