@@ -75,14 +75,15 @@
       "url": "/projects"
     },
     "news.html": {
-      "dataSources": [ "PrimaryNews.json", "SecondaryNews.json" ],
+      "dataSources": [ "PrimaryNews.json", "SecondaryNews.json", "MostWatched.json" ],
       "sources": [
         "news/layout.html",
         "news/header.html",
         "news/highlight-section.html",
         "news/primary-news-card.html",
         "news/secondary-news-card.html",
-        "news/featured-news-card.html"
+        "news/featured-news-card.html",
+        "news/most-watched.html"
       ],
       "url": "/news"
     }

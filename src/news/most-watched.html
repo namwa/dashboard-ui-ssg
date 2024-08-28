@@ -1,0 +1,25 @@
+{{- define "most-watched" }}
+<div class="my-6 md:my-10">
+  <h3 class="my-4 font-semibold text-3xl">Most watched</h3>
+
+  <div class="h-fit grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+
+    {{- range $.Data.MostWatched }}
+    <div class="p-4 flex items-start gap-x-6 border-t border-gray-400">
+      <div class="text-red-700 text-3xl md:text-5xl font-semibold">
+        {{ .Id }}
+      </div>
+      <div class="">
+        <!-- play icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+          class="h-4 w-4 md:h-6 md:w-6 inline">
+          <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
+        </svg>
+        <span class="text-lg md:text-xl font-semibold">{{ .Title }}</span>
+      </div>
+    </div>
+    {{- end }}
+  </div>
+</div>
+
+{{- end }}
